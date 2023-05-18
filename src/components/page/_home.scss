@@ -1,0 +1,239 @@
+@import'../utils/typographie';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+.container-haut-presentation {
+    opacity: 0;
+    animation: move-in-right 1s ease-in-out forwards;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+
+    .width-container-select {
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 0 20px;
+        justify-content: flex-end;
+
+        .container-haut-droite-reseau {
+            position: relative;
+            max-width: 250px;
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 58px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgb(115, 207, 223);
+            background: linear-gradient(146deg, rgba(115, 207, 223, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(247, 255, 255, 1) 57%, rgba(220, 255, 254, 1) 93%);
+            box-shadow: 6px 6px 24px -2px rgba(0, 0, 0, 0.83);
+            -webkit-box-shadow: 6px 6px 24px -2px rgba(0, 0, 0, 0.83);
+            -moz-box-shadow: 6px 6px 24px -2px rgba(0, 0, 0, 0.83);
+
+            //placement du container reseau plus des icons
+            .container-icons-reseaux {
+                position: relative;
+                width: 150px;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .fa-linkedin {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 48px;
+                    width: 25px;
+                    height: 25px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    color: $color-icons-reseaux;
+                }
+
+                .fa-github {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 94px;
+                    width: 25px;
+                    height: 25px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    color: $color-icons-reseaux;
+                }
+
+                //annimation sautillement icons
+                .fa-bounce {
+                    animation-name: bounce;
+                    animation: bounce 2s ease-in-out;
+                }
+
+                @keyframes bounce {
+                    0% {
+                        transform: translateY(0);
+                    }
+
+                    25% {
+                        transform: translateY(-3px);
+                    }
+
+                    50% {
+                        transform: translateY(0);
+                    }
+
+                    75% {
+                        transform: translateY(5px);
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+
+                .fa-bounce:hover {
+                    animation-name: bounce;
+                    animation-duration: 2s ease-in-out;
+                }
+
+                @keyframes bounce {
+                    0% {
+                        transform: translateY(0);
+                    }
+
+                    25% {
+                        transform: translateY(-5px);
+                    }
+
+                    50% {
+                        transform: translateY(0);
+                    }
+
+                    75% {
+                        transform: translateY(5px);
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+
+                .fa-twitter {
+                    position: absolute;
+                    bottom: 6px;
+                    left: 152px;
+                    width: 25px;
+                    height: 25px;
+                    font-size: 20px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    color: $color-icons-reseaux;
+                }
+            }
+
+            .select-width {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 220px;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .container-bienvenue {
+        width: 100%;
+        height: 300px;
+        padding: 20px 80px;
+        display: flex;
+        align-items: end;
+        justify-content: flex-start;
+
+        .bienvenue {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $color-text;
+            font-family: $police-text-titrenumero2;
+        }
+    }
+
+    .container-Bonjour {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        h1 {
+            font-size: 2.5rem;
+            color: $color-text;
+            padding-right: 80px;
+            font-weight: 700;
+            font-family: $police-caveat-titre;
+
+            .ligne-h1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $color-hover-menu;
+                height: 2px;
+                border: none;
+                width: 75%;
+                margin: 1rem 0;
+            }
+        }
+
+        h1 span {
+            font-size: 4rem;
+            color: $color-hover-menu;
+            font-weight: 600;
+            font-family: $police-yellowtail-paragraphe;
+            padding-right: 2em;
+        }
+    }
+
+    .container-milieu-presentation {
+        display: flex;
+        max-width: 75%;
+        height: auto;
+        padding: 20px;
+        text-align: start;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: $police-caveat-titre;
+            color: $color-presentation-paragraphe;
+        }
+    }
+}
+
+@keyframes move-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
