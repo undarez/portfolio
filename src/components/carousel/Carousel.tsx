@@ -1,27 +1,16 @@
-// import React, {useState} from 'react'
-// import './_carousel.scss'
-//
-
 import React, { useEffect, useState } from 'react';
 import './_carousel.scss';
-import ImageData from '../../json/ImageData.json';
-// import { ReactComponent as ChevronG } from '../../asset/chevronGauche.svg';
-// import { ReactComponent as ChevronD } from '../../asset/chevronDroite.svg';
-
-interface CarouselProps {
-      interval?: number;
-}
-
+import { imgData } from '../../components/imgData/ImgData';
+//interface ImageData permet d'identifier les elements suivants Id, alt et src
 interface ImagesData {
-    id: number;
-    alt: string;
-    src: string
-
+      id: number;
+      alt: string;
+      src: string;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ interval = 3000 }) => {
+const Carousel = ({ interval = 4500 }) => {
       const [currentSlide, setCurrentSlide] = useState(0);
-      const images: ImagesData[] = ImageData;
+      const images: ImagesData[] = imgData;
 
       useEffect(() => {
             const timer = setInterval(() => {
@@ -33,16 +22,16 @@ const Carousel: React.FC<CarouselProps> = ({ interval = 3000 }) => {
             return () => {
                   clearInterval(timer);
             };
-      }, [images.length, interval]);
+      }, []);
 
       return (
-            <div className="carousel">
+            <div className="carousel" id='ancre-carousel'>
                   {images.map((image, index) => (
                         <img 
-                              key={image.id}
-                              src={image.src}
+                              key={image.id + index}
+                              src={image.src} 
                               alt={image.alt}
-                              className={index === currentSlide ? 'active' : 'dimImage'}
+                              className={index === currentSlide ? 'active' : 'no-active'} 
                         />
                   ))}
             </div>
@@ -50,61 +39,3 @@ const Carousel: React.FC<CarouselProps> = ({ interval = 3000 }) => {
 };
 
 export default Carousel;
-
-// const Carousel = () => {
-//     const [currentIndex, setCurrentIndex] = useState(0)
-
-//           // function page suivante
-//           const slideleft = () => {
-//             setCurrentIndex(currentIndex - 1);
-
-//             if (currentIndex === 0) {
-//                   setCurrentIndex(props.src.length - 1);
-//             }
-//       };
-//       // function page precedente
-//       const slideright = () => {
-//             setCurrentIndex(currentIndex + 1);
-//             if (currentIndex === props.src.length - 1) {
-//                   setCurrentIndex(0);
-//             }
-//       };
-//   return (
-//     <div>
-//         <div className="slider">
-//                   {/*short circuit permet grace à la condition d'éffacer les chevron ainsi que les chiffre des images si il ya q'une seule image  */}
-//                   {props.src.length > 1 && (
-//                         <>
-//                               {/* bouton droite */}
-//                               <p className="chiffre">
-//                                     {currentIndex + 1}/{props.src.length}
-//                               </p>
-//                               <div className="position-chevron">
-//                                     {/* bouton gauche */}
-//                                     <button
-//                                           onClick={slideleft}
-//                                           className="btn-arrowG"
-//                                     >
-//                                           <ChevronG />
-//                                     </button>
-//                                     <button
-//                                           onClick={slideright}
-//                                           className="btn-arrowD"
-//                                     >
-//                                           <ChevronD />
-//                                     </button>
-//                               </div>
-//                         </>
-//                   )}
-//                   <img
-//                         className="img-slider"
-//                         src={props.src[currentIndex]}
-//                         alt={props.alt}
-//                   />
-//             </div>
-
-//     </div>
-//   )
-// }
-
-// export default Carousel

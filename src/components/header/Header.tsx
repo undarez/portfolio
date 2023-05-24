@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDimension } from '../../useDimension/useDimension';
-import { useDisplayNone } from '../useDisplayNone/useDplayNone';
+// import { useDisplayNone } from '../useDisplayNone/useDplayNone';
 import './_header.scss';
 const Header = () => {
   const [toogle, setToogle] = useState(false);
@@ -13,17 +13,17 @@ const Header = () => {
                         <nav className='container-responsive-ul'>
                               <ul className='menu-list '>
                                     <li>
-                                          <a className="item" href="">
+                                          <a className="item" href="#ancre-presentation">
                                                 Présentation
                                           </a>
                                     </li>
                                     <li>
-                                          <a className="item" href="">
-                                                Projet
+                                          <a className="item" href="#ancre-projet">
+                                                Projets
                                           </a>
                                     </li>
                                     <li>
-                                          <a className="item" href="">
+                                          <a className="item" href="mailto:fortuna77320@gmail.com">
                                                 Contact
                                           </a>
                                     </li>

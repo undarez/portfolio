@@ -1,0 +1,71 @@
+@import '../utils/typographie';
+
+footer {
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    flex-direction: column;
+
+    .container-logo {
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 80px;
+            height: auto;
+        }
+    }
+
+    .ligne-h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #403427;
+        height: 2px;
+        border: none;
+        width: 75%;
+        margin: 1rem 0;
+    }
+
+    .container-href {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: $color-text ;
+            transition: transform 1s, color 1s;
+            font-family: $police-caveat-titre;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        a:hover {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: #73cfdf;
+
+        }
+    }
+
+    .copyright{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-family: $police-text-titrenumero2;
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+}

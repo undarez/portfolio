@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from '../../js/ExportDefault';
 import '../layout/_layout.scss';
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 //ajout loader chargement de page a l'ouverture du site
 import Loader from '../loader/Loader';
 
@@ -24,6 +25,7 @@ const Layout: any = () => {
                                           <Route path="/" element={<Home />} />
                                     </Routes>
                               </main>
+                              <Footer/>
                         </div>
                   )}
             </BrowserRouter>

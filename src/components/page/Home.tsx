@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../page/_home.scss';
 import Card from '../card/Card';
+
+//import de la liste de imgdata qui contient les elements src, title, alt, id des cards.
+import { CardData } from '../../CardData/CardData';
 import Carousel from '../carousel/Carousel';
 //ajout icone font aweasome (tweeter github linkedin)
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -70,7 +73,7 @@ const Home = () => {
                         <p className="bienvenue">Bienvenue à tous le monde.</p>
                   </div>
                   <div className="container-Bonjour">
-                        <h1>
+                        <h1 id='ancre-presentation'>
                               Je suis Billard Florian.
                               <br />
                               <hr className="ligne-h1" />
@@ -95,8 +98,23 @@ const Home = () => {
                               découvrir mes projets, mes compétences et mes
                               réalisations.
                         </p>
+                        <div className='container-card'>
+                        {CardData.map((item)=>(
+                              <Card 
+                                    key={item.id}
+                                    id={item.id}
+                                    src={item.src}
+                                    alt={item.alt}
+                                    title={item.title}
+                                    url={item.url}
+                                    desc={item.desc}
+                                    img={item.img}
+                                    />
+
+                        ))}
+                        </div>
                         
-                        <Card/>
+                        
                   </div>
             </div>
       );
