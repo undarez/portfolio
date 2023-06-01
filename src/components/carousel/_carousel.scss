@@ -1,49 +1,60 @@
 @import '../utils/typographie';
 
-.carousel{
-    position: relative;
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+  object-fit: cover;
+
+  .active {
+    border-radius: 25px;
+    object-fit: cover;
     width: 100%;
     max-width: 1240px;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    overflow: hidden;
-    object-fit: cover;
-    
-    .active {
-        border-radius: 25px;
-        object-fit: cover;
-        width: 100%;
-        max-width: 1240px;
-        height: 415px;
-        border-radius: 25px;
-        animation: display 10s infinite;
-    }
-    .no-active{
-        display: none;
-    }
+    height: 415px;
+    border-radius: 25px;
+    animation: display 10s infinite;
+  }
+
+  .no-active {
+    display: none;
+  }
 
 }
+
 @keyframes display {
-    0% {
-      transform: translateX(200px);
-      opacity: 0;
-    }
-    10% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    20% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    80% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    
-    100% {
-      transform: translateX(-200px);
-      opacity: 0;
-    }
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
   }
+
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .carousel{
+    padding-top: 80px;
+  }
+}

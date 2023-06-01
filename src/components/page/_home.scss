@@ -224,7 +224,7 @@
             color: $color-presentation-paragraphe;
         }
 
-        .container-card{
+        .container-card {
             width: 100%;
             height: auto;
             align-items: center;
@@ -246,5 +246,20 @@
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media screen and (max-width:500px){
+    .container-haut-presentation{
+
+        .container-Bonjour{
+            h1{
+                font-size: 25px;
+            }
+            span{
+                text-align: center;
+                font-size: 1.5rem !important;
+            }
+        }
     }
 }
